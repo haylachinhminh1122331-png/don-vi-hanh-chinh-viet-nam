@@ -87,6 +87,12 @@ JOIN province p ON d.province_id = p.id
 WHERE w.id = '00001';
 ```
 
+### Application Integration Patterns
+- Always join tables using the hierarchical relationships (ward.district_id = district.id, district.province_id = province.id)
+- Use the 6-char ID codes for lookups and foreign key references
+- Handle Vietnamese text with UTF-8 encoding; avoid character set conversions that might strip diacritics
+- Cache province/district data in applications for performance, as it's static reference data
+
 ## Development Notes
 
 ### Data Updates
